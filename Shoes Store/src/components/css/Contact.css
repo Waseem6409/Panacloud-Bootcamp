@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+.login-main-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+.form{
+	margin-top: 50px;
+	width: 360px;
+}
+.avatar{
+	width: 100%;
+	height: 100px;
+	margin-bottom: 20px;
+}
+.title{
+    text-align: center;
+	margin-bottom:80px ;
+	font-size: 3rem;
+}
+.div{	
+    border-bottom: 2px solid #ddd;
+    position: relative;
+	height: 45px;
+	margin-bottom: 50px;
+}
+.div > input{
+    position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	border: none;
+	outline: none;
+	/* background: none; */
+	padding: 0.5rem 0.7rem;
+	font-size: 1.2rem;
+	font-family: 'poppins', sans-serif;
+}
+
+.div >h5{
+    position: absolute;
+	left: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	color: white;
+	transition: .3s;
+	font-family: 'poppins', sans-serif;
+}
+.div:before, .div:after{
+	content: '';
+	position: absolute;
+	bottom: -2px;
+	width: 0%;
+	height: 2px;
+	background-color: black;
+	transition: .4s;
+}
+.div:before{
+	right: 50%;
+}
+
+.div:after{
+	left: 50%;
+}
+.div.focus:before, .div.focus:after{
+	width: 50%;
+}
+
+.div.focus > h5{
+	top: -8px;
+    font-size: 12px;
+    color: black;
+}
+.wronginfo{
+	text-align: center;
+	color: #38C6D9;
+	animation: RemoveElement 2s ease-in .2 forwards;
+}
+
+.btn{
+	display: block;
+	width: 100%;
+	height: 50px;
+	border-radius: 25px;
+	outline: none;
+	border: none;
+	background-image: linear-gradient(to right,#ddd, rgba(0,0,0,0.7), #ddd);
+	background-size: 200%;
+	font-size: 1.2rem;
+	color: #fff;
+	font-family: 'Poppins', sans-serif;
+	text-transform: uppercase;
+	margin: 1rem 0;
+	cursor: pointer;
+	transition: .5s;
+	margin-top: 80px;
+}
+.btn:hover{
+	background-position: right;
+}
+
+.btn:active{
+	background-position: left;
+}
+@keyframes RemoveElement{
+	0% {
+		opacity: 1;
+		visibility: visible;
+	  }
+	
+	  100% {
+		opacity: 0;
+		visibility: hidden;
+	  }
+}
+@media screen and (max-width: 900px){
+	.container{
+		grid-template-columns: 1fr;
+	}
+
+	.avatar{
+		height: 50px;
+	}
+
+	.form{
+		width: 300px;
+	}
+}
